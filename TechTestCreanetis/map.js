@@ -16,8 +16,11 @@ function mappy(array, func) {
 
 /****************************************************************/
 
+/*
+Tests de la fonction mappy()
+*/
+
 const testArray = [1, 2, 3, 4, 5, 6];
-const testEmptyArray = [];
 
 const testArrayOfObjects = [
     { marque: 'tesla', model: '3', price_ht: 35000, tva: 20 },
@@ -38,12 +41,15 @@ function addPriceTTC(car) {
     };
 }
 
-testMap = [];
-testMap = mappy(testArrayOfObjects, addPriceTTC);
+console.log("\nArray retournée par mappy() avec addTwo()")
+console.log(mappy(testArray, addTwo));
 
-console.log(testMap.length)
+console.log("\nArray d'objets retournée par mappy()")
+var testMap = mappy(testArrayOfObjects, addPriceTTC);
 testMap.forEach(e => console.log(e));
 
+console.log("\nArray d'objets passée à mappy(), vérification de non mutation")
+testArrayOfObjects.forEach(e => console.log(e));
 
 
 
